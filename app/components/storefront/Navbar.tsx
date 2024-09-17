@@ -5,7 +5,7 @@ import {
   LoginLink,
   RegisterLink,
 } from "@kinde-oss/kinde-auth-nextjs/server";
-import { LayoutDashboard, ShoppingBagIcon, SquareKanban } from "lucide-react";
+import { ShoppingBagIcon, SquareKanban } from "lucide-react";
 import { UserDropdown } from "./UserDropdown";
 import { Button } from "@/components/ui/button";
 import { redis } from "@/app/lib/redis";

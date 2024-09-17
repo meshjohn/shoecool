@@ -14,7 +14,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { ChevronLeft, XIcon } from "lucide-react";
 import Link from "next/link";
 import { useFormState } from "react-dom";
-import { getInputProps, useForm } from "@conform-to/react";
+import { useForm } from "@conform-to/react";
 import { useState } from "react";
 import Image from "next/image";
 import { categories } from "@/app/lib/categories";
@@ -167,7 +167,7 @@ export function EditForm({ data }: iAppProps) {
                 value={images}
                 key={fields.images.key}
                 name={fields.images.name}
-                defaultValue={fields.images.initialValue as any}
+                defaultValue={fields.images.initialValue as string[]}
               />
               {images.length > 0 ? (
                 <div className="flex gap-5">

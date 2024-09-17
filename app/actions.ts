@@ -40,6 +40,7 @@ export async function createProduct(prevState: unknown, formatData: FormData) {
   redirect("/dashboard/products");
 }
 
+// eslint-disable-next-line  @typescript-eslint/no-explicit-any
 export async function editProduct(prevstate: any, formData: FormData) {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
@@ -87,8 +88,8 @@ export async function deleteProduct(formData: FormData) {
   });
   redirect("/dashboard/products");
 }
-
 export default async function createBanner(
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   prevState: any,
   formatData: FormData
 ) {
@@ -133,7 +134,7 @@ export async function addItem(productId: string) {
     return redirect("/");
   }
 
-  let cart: Cart | null = await redis.get(`cart-${user.id}`);
+  const cart: Cart | null = await redis.get(`cart-${user.id}`);
   const selectedProduct = await prisma.product.findUnique({
     select: {
       id: true,
@@ -198,7 +199,7 @@ export async function delItem(formData: FormData) {
   }
 
   const productId = formData.get("productId");
-  let cart: Cart | null = await redis.get(`cart-${user.id}`);
+  const cart: Cart | null = await redis.get(`cart-${user.id}`);
   if (cart && cart.items) {
     const updateCart: Cart = {
       userId: user.id,
@@ -215,7 +216,7 @@ export async function checkOut() {
   if (!user) {
     return redirect("/");
   }
-  let cart: Cart | null = await redis.get(`cart-${user.id}`);
+  const cart: Cart | null = await redis.get(`cart-${user.id}`);
   if (cart && cart.items) {
     const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] =
       cart.items.map((item) => ({

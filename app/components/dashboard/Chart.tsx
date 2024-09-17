@@ -12,10 +12,12 @@ import {
 } from "recharts";
 
 interface iAppProps {
+  // eslint-disable-next-line  @typescript-eslint/ban-types
   data: {}[];
 }
-
+// eslint-disable-next-line  @typescript-eslint/no-explicit-any
 const aggregateData = (data: any) => {
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   const aggregated = data.reduce((acc: any, curr: any) => {
     if (acc[curr.date]) {
       acc[curr.date] += curr.revenue;
