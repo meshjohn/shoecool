@@ -14,7 +14,7 @@ export const ourFileRouter = {
       const { getUser } = getKindeServerSession();
       const user = await getUser();
       // If you throw, the user will not be able to upload
-      if (!user || user.email !== "nagyjohn121@gmail.com")
+      if (!user)
         throw new UploadThingError("Unauthorized");
 
       // Whatever is returned here is accessible in onUploadComplete as `metadata`
@@ -36,7 +36,7 @@ export const ourFileRouter = {
       const { getUser } = getKindeServerSession();
       const user = await getUser();
       // If you throw, the user will not be able to upload
-      if (!user || user.email !== "nagyjohn121@gmail.com")
+      if (!user)
         throw new UploadThingError("Unauthorized");
 
       // Whatever is returned here is accessible in onUploadComplete as `metadata`
