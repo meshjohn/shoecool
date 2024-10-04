@@ -121,8 +121,8 @@ export default function ProductCreateRoute() {
                   <SelectValue placeholder="Select Status" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="draft">Draft</SelectItem>
                   <SelectItem value="published">Published</SelectItem>
+                  <SelectItem value="draft">Draft</SelectItem>
                   <SelectItem value="archived">Archived</SelectItem>
                 </SelectContent>
               </Select>

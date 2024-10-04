@@ -38,9 +38,7 @@ async function getData() {
 
 export default async function ProductsRoute() {
   noStore();
-  const data = await getData();
-  console.log(data);
-  
+  const data = await getData();  
   return (
     <>
       <div className="flex items-center justify-end">

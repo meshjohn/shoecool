@@ -10,8 +10,8 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
-    "@conform-to/react": "^1.2.1",
-    "@conform-to/zod": "^1.2.1",
+    "@conform-to/react": "^1.2.2",
+    "@conform-to/zod": "^1.2.2",
     "@kinde-oss/kinde-auth-nextjs": "^2.3.8",
     "@prisma/client": "^5.19.1",
     "@radix-ui/react-avatar": "^1.1.0",
